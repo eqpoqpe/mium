@@ -1,23 +1,22 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import {
-  authRouter,
-  searchRotuer,
-  addRotuer,
-  courseRouter
-} from "./app/router";
-import { errorHandler, limit } from "./app/middleware";
+  errorHandler,
+  limit,
+  cursorHeader,
+  CORS
+} from "./app/middleware";
+import { register } from "./register";
 
 const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(errorHandler);
+app.use(CORS);
+app.use(cursorHeader);
 app.use(limit);
-app.use("/user", authRouter);
-app.use("/search", searchRotuer);
-app.use("/add", addRotuer);
-app.use("/course", courseRouter);
+register(app);
 
 const _ = app.listen(3000, () =>
   console.log(`
