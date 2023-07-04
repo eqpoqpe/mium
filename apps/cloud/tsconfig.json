@@ -3,14 +3,11 @@
     "sourceMap": false,
     "outDir": "dist",
     "target": "ES2016",
-    "module": "CommonJS",
     "strict": true,
+    "moduleResolution": "Bundler",
     "lib": [
       "esnext"
     ],
     "esModuleInterop": true,
-  },
-  "exclude": [
-    "prisma"
-  ],
+  }
 }
