@@ -8,6 +8,13 @@ async function search(id: string) {
   return result;
 }
 
+async function addCoureseSelection() {
+  const result = await prismaClient.courseSelection.create({ data: {} });
+
+  return result;
+}
+
 export {
-  search
+  search,
+  addCoureseSelection
 };

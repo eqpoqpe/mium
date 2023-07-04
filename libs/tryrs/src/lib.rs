@@ -9,6 +9,11 @@ use wasm_bindgen::prelude::*;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
-pub fn greet() -> i32 {
+pub fn greet() -> i8 {
+    0
+}
+
+#[wasm_bindgen]
+pub fn flex() -> i8 {
     0
 }

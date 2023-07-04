@@ -15,3 +15,8 @@ model User {
   date  DateTime   @default(now())
   name  String?
 }
+
+model CourseSelection {
+  unique String   @id @default(uuid())
+  date   DateTime @default(now())
+}

@@ -12,7 +12,8 @@ export default defineConfig({
     "cookie-parser",
     "express",
     "@prisma/client",
-    "@mium/tryrs"
+    "@mium/tryrs",
+    "node:crypto"
   ],
   plugins: [
     typescript()
