@@ -11,6 +11,9 @@ import { register } from "./register";
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.raw());
+app.use(express.text());
 app.use(cookieParser());
 app.use(errorHandler);
 app.use(CORS);

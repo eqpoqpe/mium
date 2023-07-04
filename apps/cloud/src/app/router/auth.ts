@@ -14,7 +14,7 @@ authRouter.get("/", async (request, response, next) => {
     .encrypt(secret)
 
   response.setHeader("Bearer-JWT", jwt);
-  next();
+  response.send("2333");
 });
 
 export default authRouter;
