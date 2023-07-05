@@ -1,10 +1,13 @@
-import { NextFunction, Request, Response } from "express";
+import { Context, Next } from "koa";
 
-async function CORS(req: Request, res: Response, next: NextFunction) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
+function CORS() {
+  return async function (ctx: Context, next: Next) {
+    ctx.response.set("Access-Control-Allow-Origin", "*");
+    ctx.response.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    ctx.response.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+    return next();
+  }
 }
 
 export default CORS;

@@ -1,16 +1,15 @@
-import { NextFunction, Request, Response } from "express";
+import { Context, Next } from "koa";
 import { randomInt } from "node:crypto";
 
-async function limit(req: Request, res: Response, next: NextFunction) {
-  // const curr = randomInt(10);
+function limit() {
+  return async function (ctx: Context, next: Next) {
+    const authOverNumber = randomInt(1000);
 
-  // if (curr % 2) {
-  //   res.json({ error: "limited" });
-  // } else {
-  //   next();
-  // }
+    ctx.response.set("X-Auth-Over", authOverNumber.toString());
+    ctx.response.set("X-Powered-By", "koa");
 
-  next();
+    return next();
+  }
 }
 
 export default limit;
