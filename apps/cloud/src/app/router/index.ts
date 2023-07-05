@@ -2,7 +2,9 @@
 // not working when use express
 
 import addRouter from "./add";
+import authRouter from "./auth";
 
 export {
-  addRouter
+  addRouter,
+  authRouter
 };

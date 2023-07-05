@@ -4,7 +4,7 @@
     "outDir": "dist",
     "target": "ES2016",
     "strict": true,
-    "moduleResolution": "Bundler",
+    "moduleResolution": "NodeNext",
     "lib": [
       "esnext"
     ],

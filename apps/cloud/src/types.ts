@@ -1,7 +1,8 @@
 type AccessCode = "limit" | "block";
 
-interface ServerResult {
+interface ServerResult<T> {
   error: AccessCode;
+  data?: T;
 }
 
 export {

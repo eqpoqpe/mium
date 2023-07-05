@@ -4,8 +4,13 @@ import { addCoureseSelection } from "../service";
 const addRouter = new Router();
 
 addRouter.get("/", async (ctx) => {
-  ctx.body = "add done";
-  addCoureseSelection();
+  try {
+    await addCoureseSelection();
+
+    ctx.body = "add done";
+  } catch (error) {
+    ctx.body = "add error";
+  }
 });
 
 export default addRouter;

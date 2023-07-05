@@ -1,8 +1,10 @@
 import { register } from "./register";
 import Koa from "koa";
+import { bodyParser } from "@koa/bodyparser";
 
 const app = new Koa();
 
+app.use(bodyParser());
 register(app);
 const _ = app.listen(3000, "0.0.0.0", 0, () => {
   console.log(`

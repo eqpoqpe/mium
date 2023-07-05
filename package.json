@@ -11,8 +11,5 @@
   "workspaces": [
     "apps/**/*",
     "libs/**/*"
-  ],
-  "devDependencies": {
-    "mium": "^1.0.0"
-  }
+  ]
 }
