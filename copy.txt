@@ -1,2 +1,0 @@
-apps/cloud/dist/main.js
-apps/cloud/prisma/dev.db
