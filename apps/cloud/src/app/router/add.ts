@@ -1,15 +1,11 @@
-import express from "express";
-import { ServerResult } from "../../types";
+import Router from "@koa/router";
+import { addCoureseSelection } from "../service";
 
-const addRotuer = express.Router();
+const addRouter = new Router();
 
-addRotuer.post("/", async (request, response) => {
-  const serverResult: ServerResult & { echo?: string } = {
-    error: "limit",
-    echo: request.body.talk
-  };
+addRouter.get("/", async (ctx) => {
+  ctx.body = "add done";
+  addCoureseSelection();
+});
 
-  response.json(serverResult);
-})
-
-export default addRotuer;
+export default addRouter;

@@ -12,7 +12,8 @@ export default defineConfig({
   },
   external: [
     "cookie-parser",
-    "express",
+    "koa",
+    "@koa/router",
     "@prisma/client",
     "@mium/tryrs",
     "node:crypto"

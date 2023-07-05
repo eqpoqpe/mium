@@ -1,11 +1,8 @@
-import authRouter from "./auth";
-import searchRotuer from "./search";
-import addRotuer from "./add";
-import courseRouter from "./course";
+// router index for koa
+// not working when use express
+
+import addRouter from "./add";
 
 export {
-  authRouter,
-  searchRotuer,
-  addRotuer,
-  courseRouter
+  addRouter
 };

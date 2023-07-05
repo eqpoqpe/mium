@@ -1,5 +1,0 @@
--- CreateTable
-CREATE TABLE "CourseSelection" (
-    "unique" TEXT NOT NULL PRIMARY KEY,
-    "date" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-);

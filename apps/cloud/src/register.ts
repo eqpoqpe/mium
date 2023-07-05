@@ -1,16 +1,17 @@
-import { Express } from "express";
-import {
-  authRouter,
-  searchRotuer,
-  addRotuer,
-  courseRouter
-} from "./app/router";
+import Koa from "koa";
+import Router from "@koa/router";
+import { addRouter } from "./app/router";
 
-function register(app: Express) {
-  app.use("/auth", authRouter);
-  app.use("/search", searchRotuer);
-  app.use("/add", addRotuer);
-  app.use("/course", courseRouter);
+function register(app: Koa) {
+  // set basepath if need
+  // app router
+  const appRouter = new Router({ prefix: "/mium" });
+
+  appRouter.use("/add",
+    addRouter.routes(),
+    addRouter.allowedMethods()
+  );
+  app.use(appRouter.routes());
 }
 
 export { register };
