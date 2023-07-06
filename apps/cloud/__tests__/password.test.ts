@@ -1,23 +1,17 @@
-// // Example usage
-// const password = 'myPassword';
-// const salt = crypto.randomBytes(16).toString('hex');
+import { hashPassword, verifyPassword } from "../src/app/util/security";
 
-// // Hash the password
-// hashPassword(password, salt)
-//   .then(hashedPassword => {
-//     console.log('Hashed Password:', hashedPassword);
+const salt = "9a23513d5919c023b434886cdddc35d5";
+const password = "ptauEixhYKtttYmH";
+const hask = "a657c1e57e6ac6493eeb0c8baa3bee4ba1f7d67410605c5f43d1c227920ecb6b525bc37d7f503ba1bbc8c4e60212d8a3146d78aa73960911c45f1f8861a7de57"
 
-//     // For verification, retrieve the salt and hashed password from the database
-//     // Then use verifyPassword to check the password
-//     const storedSalt = salt;
-//     const storedHashedPassword = hashedPassword;
+test("Test for hashPassword", async () => {
+  const result = await hashPassword(password, salt);
 
-//     // Verify the password
-//     return verifyPassword(password, storedSalt, storedHashedPassword);
-//   })
-//   .then(isValid => {
-//     console.log('Password is valid:', isValid);
-//   })
-//   .catch(err => {
-//     console.error('Error:', err);
-//   });
+  expect(result).toBe(hask);
+});
+
+test("Test for verifyPassword", async () => {
+  const result = await verifyPassword(password, salt, hask);
+
+  expect(result).toBe(true);
+});

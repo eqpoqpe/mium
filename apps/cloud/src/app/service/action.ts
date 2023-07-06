@@ -1,20 +1,18 @@
-import { ServerResult } from "../../types";
+type ActionResult<T> = {
+  result?: T;
+  error?: any;
+};
 
-async function performAction<T>(action: () => Promise<any>): Promise<ServerResult<T | {}>> {
-  const result: ServerResult<T | {}> = { error: "block" };
-  let searchResult;
+async function performAction<T>(action: () => Promise<any>): Promise<ActionResult<T | {}>> {
+  const searchResult: ActionResult<T> = {};
 
   try {
-    searchResult = await action();
+    searchResult.result = await action();
   } catch (error) {
-    result.error = "block";
+    searchResult.error = error;
   }
 
-  if (!!searchResult) {
-    result.data = searchResult;
-  }
-
-  return result;
+  return searchResult;
 }
 
 export {

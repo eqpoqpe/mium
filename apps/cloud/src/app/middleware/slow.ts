@@ -1,8 +1,8 @@
 import { Context, Next } from "koa";
 
-function slow() {
+function slow(delay: number) {
   return async function (ctx: Context, next: Next) {
-    await new Promise(resolve => setTimeout(resolve, 6000));
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
     return next();
   }
