@@ -6,7 +6,7 @@ async function main() {
   console.log(`Start seeding ...`);
 
   for (let index = 0; index < 20; index++) {
-    const _ = await prisma.user.create({ data: { name: "2333" }, });
+    const _ = await prisma.courseSelection.create({ data: {} });
 
     console.clear();
     console.log(`completed ${index}`);

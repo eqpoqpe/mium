@@ -21,12 +21,18 @@ model User {
 }
 
 // model UserInfos {
-//   id      Int    @id @default(uuid())
+//   id      String    @id @default(uuid())
 //   owner   User   @relation(fields: [ownerId], references: [id])
 //   date      DateTime    @default(now())
 //   ownerId String
-//   name    String
+//   name    String?
+//   avatar  Bytes?
 // }
+
+model AvatarE {
+  id     String @id @default(uuid())
+  avatar Bytes
+}
 
 model CourseSelection {
   unique String   @id @default(uuid())

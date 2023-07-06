@@ -1,9 +1,13 @@
-import { NextFunction, Request, Response } from "express";
+import { Context, Next } from "koa";
 
-async function cursorHeader(req: Request, res: Response, next: NextFunction) {
-  res.removeHeader("X-Powered-By");
+function cursorHeader(headerFields: string[]) {
+  return async function (ctx: Context, next: Next) {
+    headerFields.map((field) => {
+      ctx.response.remove(field);
+    })
 
-  next();
+    return next();
+  }
 }
 
 export default cursorHeader;

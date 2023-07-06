@@ -16,7 +16,8 @@ export default defineConfig({
     "@koa/router",
     "@prisma/client",
     "@mium/tryrs",
-    "node:crypto"
+    "crypto",
+    "@koa/bodyparser"
   ],
   plugins: [
     typescript(),

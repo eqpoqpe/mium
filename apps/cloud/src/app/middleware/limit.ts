@@ -1,5 +1,5 @@
 import { Context, Next } from "koa";
-import { randomInt } from "node:crypto";
+import { randomInt } from "crypto";
 
 function limit() {
   return async function (ctx: Context, next: Next) {
