@@ -6,23 +6,24 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id        String      @id @default(cuid())
-  date      DateTime    @default(now())
-  only_key  String
-  password  String
-  salt      String
-  email     String      @unique
+  id       String   @id @default(cuid())
+  date     DateTime @default(now())
+  only_key String
+  password String
+  salt     String
+  email    String   @unique
   // UserInfos UserInfos[]
 }
 
 // model UserInfos {
-//   id      Int    @id @default(autoincrement())
+//   id      Int    @id @default(uuid())
 //   owner   User   @relation(fields: [ownerId], references: [id])
+//   date      DateTime    @default(now())
 //   ownerId String
 //   name    String
 // }
