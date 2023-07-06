@@ -1,24 +1,23 @@
 import Router from "@koa/router";
-import { search } from "../service";
+import { createUser, search } from "../service";
 import { ServerResult } from "../../types";
 import { Prisma } from "@prisma/client";
+import { performAction } from "../service/action";
 
 const authRouter = new Router();
 
 authRouter.post("/", async (ctx) => {
   const id = ctx.request?.body.unique ?? "";
-  var result: ServerResult<Prisma.UserCreateInput | {}> = { error: "block" };
-  var searchResult;
 
-  try {
-    searchResult = await search(id);
-  } catch (error) {
-    result.error = "block";
-  }
-
-  if (!!searchResult) {
-    result.data = searchResult;
-  }
+  const result = await performAction<ServerResult<Prisma.UserCreateInput | {}>>(async () => {
+    return await search(id);
+  });
+  ctx.body = result;
+});
+authRouter.post("/registry", async (ctx, next) => {
+  const result = await performAction<ServerResult<Prisma.UserCreateInput | {}>>(async () => {
+    return await createUser();
+  });
 
   ctx.body = result;
 });
