@@ -1,4 +1,4 @@
-name: Container build test
+name: Image build test
 
 on:
   push:
