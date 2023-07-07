@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT",
+  "license": "MPL-2.0",
   "workspaces": [
     "apps/**/*",
     "libs/**/*"
