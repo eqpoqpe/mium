@@ -1,27 +1,33 @@
-FROM node:18-alpine AS builder
+FROM node:18-alpine AS build
 
-# Create app directory
 WORKDIR /app
 
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
 COPY package*.json ./
 
 COPY . .
 
-RUN npm install
+# RUN npm ci
+
 RUN npm run prisma:generate -w apps/cloud/
+
 RUN npm run build -w apps/cloud/
-RUN npm prune --production
-RUN npm install --no-optional
+RUN npm prune --production --no-optional
 
-FROM node:18-alpine
+FROM node:18-alpine AS production
 
-ENV DATABASE_URL="postgresql://myuser:mypassword@db:5432/mydatabase"
-
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/apps/cloud/ ./
-COPY --from=builder /app/scripts/migrate.sh ./
+WORKDIR /app
 
 EXPOSE 3000
-CMD ["bash", "./migrate.sh"]
+
+COPY --from=build /app/node_modules/ ./node_modules
+COPY --from=build /app/package*.json ./
+
+# apps/cloud
+COPY --from=build /app/apps/cloud/package*.json ./apps/cloud/
+COPY --from=build /app/apps/cloud/dist/ ./apps/cloud/dist/
+COPY --from=build /app/apps/cloud/prisma/ ./apps/cloud/prisma/
+
+# run script
+COPY --from=build /app/scripts/ ./scripts
+
+CMD ["/bin/sh", "./scripts/migrate.sh"]
