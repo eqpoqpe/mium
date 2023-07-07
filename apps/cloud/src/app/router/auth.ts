@@ -10,7 +10,7 @@ import { CreateUserPayloadErrors } from "@mium/types";
 
 const authRouter = new Router();
 
-function passwordMiddle() {
+function passwordMiddleware() {
   return async function (ctx: Context, next: Next) {
     const { password } = ctx.request.body;
     const serveResult: ServerResult<unknown> = {
@@ -25,7 +25,7 @@ function passwordMiddle() {
   }
 }
 
-function emailMiddle() {
+function emailMiddleware() {
   return async function (ctx: Context, next: Next) {
     const { email } = ctx.request.body;
     const serveResult: ServerResult<unknown> = {
@@ -40,7 +40,7 @@ function emailMiddle() {
   }
 }
 
-function registryActionMiddle() {
+function registryActionMiddleware() {
   return async function (ctx: Context, next: Next) {
     const { password, email } = (ctx.request.body as CreateUserPayload);
     var result: ServerResult<User | {}> = { error: "block" };
@@ -57,11 +57,11 @@ function registryActionMiddle() {
 }
 
 authRouter.post("/registry",
-  passwordMiddle(),
-  emailMiddle(),
+  passwordMiddleware(),
+  emailMiddleware(),
 
   // all ready to handle `registry`
-  registryActionMiddle()
+  registryActionMiddleware()
 );
 
 export default authRouter;

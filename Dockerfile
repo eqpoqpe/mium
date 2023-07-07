@@ -6,7 +6,7 @@ COPY package*.json ./
 
 COPY . .
 
-# RUN npm ci
+RUN npm ci
 
 RUN npm run prisma:generate -w apps/cloud/
 

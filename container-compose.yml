@@ -1,3 +1,6 @@
+# for development
+# it's not ready for production
+
 version: "3"
 services:
   db:
