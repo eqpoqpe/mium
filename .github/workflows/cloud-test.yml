@@ -43,7 +43,7 @@ jobs:
         echo "DATABASE_URL=postgresql://mium:${{ secrets.DB_PASSWORD }}@localhost:5432/miumdatabase?schema=public" >> $GITHUB_ENV
 
     - name: Run Prisma migrations
-      run: npx -w apps/cloud/ prisma migrate deploy --preview-feature
+      run: npm run migrate:dev:init -w apps/cloud/
 
     - name: Generate Prisma client
       run: npm run prisma:generate -w apps/cloud/

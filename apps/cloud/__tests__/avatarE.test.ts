@@ -16,6 +16,7 @@ describe("AvatarE Model Tests", () => {
     const newUser = await prisma.avatarE.create({
       data: { avatar: avatarData }
     });
+
     expect(newUser.id).toBeDefined();
   });
 });
