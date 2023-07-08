@@ -5,9 +5,9 @@
     "rootDir": "./src",
     "target": "ES2016",
     "strict": true,
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Node",
     "types": [
-      "NodeNext"
+      "node"
     ],
     "lib": [
       "esnext"

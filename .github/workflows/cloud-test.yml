@@ -49,4 +49,4 @@ jobs:
       run: npm run prisma:generate -w apps/cloud/
 
     - name: Run tests
-      run: npm test
+      run: npm test -w apps/cloud/
