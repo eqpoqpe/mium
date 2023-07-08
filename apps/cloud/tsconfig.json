@@ -6,9 +6,6 @@
     "target": "ES2016",
     "strict": true,
     "moduleResolution": "Node",
-    "types": [
-      "node"
-    ],
     "lib": [
       "esnext"
     ],
