@@ -3,15 +3,18 @@
     "sourceMap": false,
     "outDir": "dist",
     "target": "ES2016",
+    "module": "Node16",
     "strict": true,
     "moduleResolution": "Node",
+    "strictNullChecks": true,
     "lib": [
       "esnext"
     ],
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
+  "exclude": [
+    "__features__/**/*.ts",
+    "__tests__/**/*.ts"
+  ],
+  "references": []
 }

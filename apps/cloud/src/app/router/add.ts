@@ -1,16 +1,8 @@
 import Router from "@koa/router";
-import { addCoureseSelection } from "../service";
+import { indexController } from "../controller/add";
 
 const addRouter = new Router();
 
-addRouter.get("/", async (ctx) => {
-  try {
-    await addCoureseSelection();
-
-    ctx.body = "add done";
-  } catch (error) {
-    ctx.body = "add error";
-  }
-});
+addRouter.get("/", indexController);
 
 export default addRouter;

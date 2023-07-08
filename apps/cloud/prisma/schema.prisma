@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
 }
 
 datasource db {
@@ -11,23 +12,43 @@ datasource db {
 }
 
 model User {
-  id       String   @id @default(cuid())
-  date     DateTime @default(now())
-  only_key String
-  password String
-  salt     String
-  email    String   @unique
-  // UserInfos UserInfos[]
+  id        String      @id @default(cuid())
+  date      DateTime    @default(now())
+  only_key  String
+  password  String
+  salt      String
+  email     String      @unique
+  UserInfos UserInfos[]
+  accounts  Account[]
 }
 
-// model UserInfos {
-//   id      String    @id @default(uuid())
-//   owner   User   @relation(fields: [ownerId], references: [id])
-//   date      DateTime    @default(now())
-//   ownerId String
-//   name    String?
-//   avatar  Bytes?
-// }
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model UserInfos {
+  token   String   @id @default(uuid())
+  owner   User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  date    DateTime @default(now())
+  ownerId String
+  name    String?
+}
 
 model AvatarE {
   id     String @id @default(uuid())

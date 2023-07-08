@@ -64,4 +64,9 @@ authRouter.post("/registry",
   registryActionMiddleware()
 );
 
+authRouter.get("/exp", async (ctx, next) => {
+  ctx.status = 200;
+  ctx.body = "2333";
+});
+
 export default authRouter;
