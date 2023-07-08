@@ -2,12 +2,20 @@
   "compilerOptions": {
     "sourceMap": false,
     "outDir": "dist",
+    "rootDir": "./src",
     "target": "ES2016",
     "strict": true,
     "moduleResolution": "NodeNext",
+    "types": [
+      "NodeNext"
+    ],
     "lib": [
       "esnext"
     ],
     "esModuleInterop": true,
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   }
 }
