@@ -39,7 +39,7 @@ jobs:
         cache: "npm"
     - run: npm ci
     - run: DATABASE_URL="postgresql://mium:ptauEixhYKtttYmH@db:5432/miumdatabase?schema=public"
-    - run: npm run migrate:dev:init -w apps/cloud/
-    - run: npm run prisma:generate -w apps/cloud/
-    - run: npm run prisma:push -w apps/cloud/
+    # - run: npm run migrate:dev:init -w apps/cloud/
+    # - run: npm run prisma:generate -w apps/cloud/
+    # - run: npm run prisma:push -w apps/cloud/
     - run: npm test -w apps/cloud/
