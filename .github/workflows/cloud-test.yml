@@ -46,7 +46,7 @@ jobs:
       run: npx -w apps/cloud/ prisma migrate deploy --preview-feature
 
     - name: Generate Prisma client
-      run: npm run prisma generate -w apps/cloud/
+      run: npm run prisma:generate -w apps/cloud/
 
     - name: Run tests
       run: npm test
