@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: cloud test
+name: Cloud test
 
 on:
   push:
@@ -43,4 +43,4 @@ jobs:
         echo "DATABASE_URL=postgresql://mium:${{ secrets.DB_PASSWORD }}@localhost:5432/miumdatabase?schema=public" >> $GITHUB_ENV
 
     - name: Run Prisma migrations
-      run: npx prisma migrate deploy --preview-feature
+      run: npx -w apps/cloud/ prisma migrate deploy --preview-feature
