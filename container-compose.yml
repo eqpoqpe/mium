@@ -6,9 +6,9 @@ services:
   db:
     image: postgres:latest
     environment:
-      POSTGRES_USER: mium
-      POSTGRES_PASSWORD: ptauEixhYKtttYmH
-      POSTGRES_DB: miumdatabase
+      POSTGRES_USER: ${USER_NAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     ports:
       - 5432:5432
     volumes:
