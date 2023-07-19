@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 async function main() {
   console.log(`Start seeding ...`);
 
-  for (let index = 0; index < 20; index++) {
+  for (let index = 0; index < 2000000; index++) {
     const _ = await prisma.courseSelection.create({ data: {} });
 
     console.clear();

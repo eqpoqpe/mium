@@ -6,4 +6,3 @@ dist/
 /target
 dev.db
 dev.db-journal
-migrations/
