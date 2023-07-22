@@ -1,6 +1,6 @@
 import Router from "@koa/router";
 import { createUser } from "../service";
-import { ServerResult } from "../../types";
+import { ServerResult } from "../types";
 import { User } from "@prisma/client";
 import { performAction } from "../service/action";
 import { CreateUserPayload } from "@mium/types";

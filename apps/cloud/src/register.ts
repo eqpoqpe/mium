@@ -1,6 +1,6 @@
 import Koa from "koa";
 import Router from "@koa/router";
-import { addRouter, authRouter } from "./app/router";
+import { addRouter, authRouter } from "./router";
 
 function register(app: Koa) {
 

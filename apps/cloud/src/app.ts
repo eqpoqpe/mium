@@ -6,7 +6,7 @@ import {
   cursorHeader,
   errorHandler,
   limit
-} from "./app/middleware";
+} from "./middleware";
 
 const app = new Koa();
 
