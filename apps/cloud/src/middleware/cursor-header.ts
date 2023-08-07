@@ -1,12 +1,10 @@
 import { Context, Next } from "koa";
 
-function cursorHeader(headerFields: string[]) {
+function cursorHeader(headerFields?: string[]) {
   return async function (ctx: Context, next: Next) {
-    headerFields.map((field) => {
-      ctx.response.remove(field);
-    })
+    ctx.set("X-Mium-Number", "2333");
 
-    return next();
+    await next();
   }
 }
 
