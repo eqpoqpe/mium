@@ -19,6 +19,9 @@ interface ServerResult<T> {
   data?: T;
 }
 
+type ApplicationConfig = {};
+
 export {
-  type ServerResult
+  type ServerResult,
+  type ApplicationConfig
 };

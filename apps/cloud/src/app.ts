@@ -4,7 +4,7 @@ import cors from "@koa/cors";
 import { cursorHeader, errorHandler } from "./middleware";
 import { makeTracingLayer } from "./layer";
 
-const app = new Koa();
+const app = new Koa({ proxy: true });
 
 app.use(errorHandler());
 app.use(bodyParser());
