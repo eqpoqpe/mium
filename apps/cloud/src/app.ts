@@ -5,9 +5,10 @@ import { cursorHeader, errorHandler } from "./middleware";
 import { makeTracingLayer } from "./layer";
 import Router from "@koa/router";
 
-function App() {
+async function App() {
+  const config = (await import("./config")).default;
   const app = new Koa({ proxy: true });
-  const router = new Router({ prefix: "/api" });
+  const router = new Router({ prefix: config?.prefix });
 
   app.use(errorHandler());
   app.use(bodyParser());

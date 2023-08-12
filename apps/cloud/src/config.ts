@@ -1,5 +1,7 @@
 import { ApplicationConfig } from "./types";
 
-const config: ApplicationConfig = {};
+const config: ApplicationConfig = {
+  prefix: "/api"
+};
 
 export default config;

@@ -21,6 +21,7 @@ interface ServerResult<T> {
 
 type ApplicationConfig = {
   privoder?: string;
+  prefix?: string;
 };
 
 export {
