@@ -19,7 +19,9 @@ interface ServerResult<T> {
   data?: T;
 }
 
-type ApplicationConfig = {};
+type ApplicationConfig = {
+  privoder?: string;
+};
 
 export {
   type ServerResult,
