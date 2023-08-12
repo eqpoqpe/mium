@@ -1,3 +1,5 @@
 import { ApplicationConfig } from "./types";
 
-export default ({}) as ApplicationConfig;
+const config: ApplicationConfig = {};
+
+export default config;

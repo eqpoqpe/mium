@@ -1,6 +1,6 @@
-import app from "./app";
+import App from "./app";
 
-const server = app.listen(3000, "0.0.0.0", 0, () => {
+const server = App().listen(3000, "0.0.0.0", 0, () => {
   console.log(`
 🚀 Server ready at: http://localhost:3000
 `)

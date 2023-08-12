@@ -1,9 +1,7 @@
 import Router from "@koa/router";
 import { authRotuer } from "./api/auth";
 
-function makeTracingLayer() {
-  const router = new Router({ prefix: "/api" });
-
+function makeTracingLayer(router: Router) {
   router.use("/auth", authRotuer.routes(), authRotuer.allowedMethods());
 
   return router.routes();

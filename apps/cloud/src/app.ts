@@ -3,13 +3,19 @@ import { bodyParser } from "@koa/bodyparser";
 import cors from "@koa/cors";
 import { cursorHeader, errorHandler } from "./middleware";
 import { makeTracingLayer } from "./layer";
+import Router from "@koa/router";
 
-const app = new Koa({ proxy: true });
+function App() {
+  const app = new Koa({ proxy: true });
+  const router = new Router({ prefix: "/api" });
 
-app.use(errorHandler());
-app.use(bodyParser());
-app.use(cors());
-app.use(cursorHeader());
-app.use(makeTracingLayer());
+  app.use(errorHandler());
+  app.use(bodyParser());
+  app.use(cors());
+  app.use(cursorHeader());
+  app.use(makeTracingLayer(router));
 
-export default app;
+  return app;
+}
+
+export default App;
