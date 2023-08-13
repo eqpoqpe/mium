@@ -16,8 +16,6 @@
     "prisma:studio": "prisma studio",
     "test": "jest"
   },
-  "author": "",
-  "license": "MPL-2.0",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.2",
     "@rollup/plugin-json": "^6.0.0",
@@ -49,5 +47,7 @@
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
-  }
+  },
+  "author": "",
+  "license": "MPL-2.0"
 }

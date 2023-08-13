@@ -1,4 +1,4 @@
-import { removeSpaces } from "./format";
+import { removeSpaces } from "@mium/utils";
 
 type Limiter = { [key: string]: (data?: string) => boolean; };
 
