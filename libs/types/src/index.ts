@@ -1,7 +1,2 @@
-import { CreateUserPayload } from "./auth";
-import { CreateUserPayloadErrors} from "./error";
-
-export {
-  type CreateUserPayload,
-  CreateUserPayloadErrors
-};
+export * from "./interfaces/auth-interface";
+export * from "./infrastructures/error-infrastructure";

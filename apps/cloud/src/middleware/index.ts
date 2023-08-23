@@ -1,9 +1,9 @@
-import errorHandler from "./error-handler";
+import { applicationException } from "./application-exception";
 import cursorHeader from "./cursor-header";
 import slow from "./slow";
 
 export {
-  errorHandler,
+  applicationException,
   cursorHeader,
   slow
 };

@@ -1,0 +1,19 @@
+/* Copyright (c) 2023 Ryan Martin */
+/* This code is licensed under MPL-2.0 license. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: inherit;
+  height: inherit;
+  position: fixed;
+  top: 0;
+}

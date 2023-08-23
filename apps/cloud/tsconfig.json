@@ -1,10 +1,10 @@
 {
   "extends": "ts-node/node16/tsconfig.json",
   "compilerOptions": {
-    "module": "ES2020",
+    "module": "esnext",
     "sourceMap": false,
     "outDir": "dist",
-    "target": "ES2016",
+    "target": "es2017",
     "strict": true,
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
@@ -13,7 +13,8 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "moduleResolution": "Node"
     }
   },
   "exclude": [

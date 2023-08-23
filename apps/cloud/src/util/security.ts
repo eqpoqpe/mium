@@ -1,6 +1,6 @@
 import crypto from "crypto";
 
-// Generate the hash value of a password
+// generate the hash value of a password
 function hashPassword(password: string, salt: string): Promise<string> {
   return new Promise((resolve, reject) => {
     crypto.pbkdf2(password, salt, 10000, 64, "sha512", (err, derivedKey) => {
@@ -14,7 +14,7 @@ function hashPassword(password: string, salt: string): Promise<string> {
   });
 }
 
-// Verify if a password matches the stored hashed password
+// verify if a password matches the stored hashed password
 function verifyPassword(password: string, salt: string, hashedPassword: string): Promise<boolean> {
   return new Promise((resolve, reject) => {
     crypto.pbkdf2(password, salt, 10000, 64, "sha512", (err, derivedKey) => {

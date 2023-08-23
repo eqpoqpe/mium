@@ -1,3 +1,6 @@
+// Copyright (c) 2023 Ryan Martin
+// This code is licensed under MPL-2.0 license.
+
 import { CreateUserPayloadErrors } from "@mium/types";
 
 type AccessCode = "limit" | "block" | "full";
@@ -20,7 +23,7 @@ interface ServerResult<T> {
 }
 
 type ApplicationConfig = {
-  privoder?: string;
+  privoder?: string | boolean;
   prefix?: string;
 };
 
