@@ -43,7 +43,8 @@
     "@rollup/plugin-replace": "^5.0.2",
     "@types/koa": "^2.13.6",
     "jose": "^4.14.4",
-    "koa": "^2.14.2"
+    "koa": "^2.14.2",
+    "node-cache": "^5.1.2"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

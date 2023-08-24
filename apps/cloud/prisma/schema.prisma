@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "debian-openssl-1.1.x"]
 }
 
@@ -51,8 +51,10 @@ model UserInfos {
 }
 
 model AvatarE {
-  id     String @id @default(uuid())
-  avatar Bytes
+  id       String  @id @default(uuid())
+  type     String
+  fileName String? @map("file_name")
+  avatar   Bytes
 }
 
 model CourseSelection {

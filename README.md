@@ -12,9 +12,6 @@
   <a href="">
     <img src="https://img.shields.io/badge/template-ready-green" alt="CI status" />
   </a>&nbsp;
-  <a href="https://github.com/eqpoqpe/mium/blob/main/LICENSE_MIT">
-    <img src="https://img.shields.io/badge/license-MIT-blue" alt="CI status" />
-  </a>&nbsp;
   <a href="https://github.com/eqpoqpe/mium/blob/main/LICENSE_MPL-2.0">
     <img src="https://img.shields.io/badge/license-MPL 2.0-blue" alt="CI status" />
   </a>&nbsp;

@@ -2,6 +2,7 @@
 // This code is licensed under MPL-2.0 license.
 
 import { CreateUserPayloadErrors } from "@mium/types";
+import { type Options as NodeCacheOPtions } from "node-cache";
 
 type AccessCode = "limit" | "block" | "full";
 
@@ -25,6 +26,8 @@ interface ServerResult<T> {
 type ApplicationConfig = {
   privoder?: string | boolean;
   prefix?: string;
+  port?: number;
+  cache?: NodeCacheOPtions;
 };
 
 export {

@@ -1,20 +1,34 @@
 // Copyright (c) 2023 Ryan Martin
 // This code is licensed under MPL-2.0 license.
 
-import { PropsWithChildren } from "react";
-import tokenWord from "../token-word";
+import { PropsWithChildren, createContext, useContext, useState } from "react";
 
-type AuthProviderProps = {};
+type AuthContext = {
+  token: string;
+};
+
+type AuthProviderProps = {
+  initialFn?: () => string;
+};
+
+const authContext = createContext<AuthContext | undefined>(undefined);
 
 function AuthProvider(props: AuthProviderProps & PropsWithChildren) {
-  const { children } = props;
-  const token = localStorage.getItem(tokenWord.jwt);
+  const { children, initialFn } = props;
+  const [authToken, setAuthToken] = useState(initialFn ?? "");
 
   return (
-    <div></div>
+    <authContext.Provider value={{ token: authToken }}>
+      {children}
+    </authContext.Provider>
   );
 }
 
+function useAuthContext() {
+  return useContext(authContext);
+}
+
 export {
-  AuthProvider
+  AuthProvider,
+  useAuthContext
 };

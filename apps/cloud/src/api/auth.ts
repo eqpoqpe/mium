@@ -1,28 +1,35 @@
 import Router from "@koa/router";
-import { Context } from "koa";
+import { type Context } from "koa";
 import { VerificationPayload } from "@mium/types";
+import { isValidEmail } from "../util";
+import { isAlphaNumeric } from "@mium/utils";
 
-async function login(ctx: Context) {
-  ctx.body = "login ok";
+interface ILoginPayload extends VerificationPayload { }
+
+async function createAccessToken() {
 }
 
 async function uniqueVerification(ctx: Context) {
 
   // provider code or email
-  const { provided_value } = (ctx.request.body as VerificationPayload);
+  const { unique_key } = (ctx.request.body as ILoginPayload);
 
-  console.log("verification");
+  if (isValidEmail(unique_key)) {
 
-  if (typeof provided_value !== "undefined") {
-    ctx.body = "verification ok";
+    // email verification
+    ctx.body = "email";
+  } else if (isAlphaNumeric(unique_key)) {
+
+    // provider code verification
+    ctx.body = "provider code"
   } else {
-    ctx.body = "verification error";
+    ctx.body = "valid";
   }
 }
 
 const authRotuer = new Router()
-  .post("/login", login)
   .post("/verification", uniqueVerification)
+  .post("/create_access_token", createAccessToken);
 
 export {
   authRotuer

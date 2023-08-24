@@ -7,9 +7,10 @@ import cors from "@koa/cors";
 import { cursorHeader, applicationException } from "./middleware";
 import { makeTracingLayer } from "./layer";
 import Router from "@koa/router";
+import { ApplicationConfig } from "./types";
+import { cacheProvider } from "./infrastructure/cache-provider";
 
-async function App() {
-  const config = (await import("./config")).default;
+function App(config: ApplicationConfig) {
   const app = new Koa({ proxy: true });
   const router = new Router({ prefix: config?.prefix });
 
@@ -17,6 +18,7 @@ async function App() {
   app.use(bodyParser());
   app.use(cors());
   app.use(cursorHeader());
+  app.use(cacheProvider(config.cache));
   app.use(makeTracingLayer(router));
 
   return app;

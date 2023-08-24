@@ -2,13 +2,10 @@
 // This code is licensed under MPL-2.0 license.
 
 import App from "./app";
+import config from "./config";
 
-async function main() {
-  const server = (await App()).listen(3000, "0.0.0.0", 0, () => {
-    console.log(`
-  🚀 Server ready at: http://localhost:3000
-  `)
-  });
-}
-
-main();
+const server = App(config).listen(config.port ?? 3000, "0.0.0.0", 0, () => {
+  console.log(`
+🚀 Server ready at: http://localhost:${config.port ?? 3000}
+`)
+});

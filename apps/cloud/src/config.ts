@@ -4,7 +4,13 @@
 import { ApplicationConfig } from "./types";
 
 const config: ApplicationConfig = {
-  prefix: "/api"
+  prefix: "/api",
+  port: 3000,
+  cache: {
+
+    // 7 day
+    stdTTL: (60 * 60 * 12 * 7)
+  }
 };
 
 export default config;

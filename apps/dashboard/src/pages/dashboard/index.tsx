@@ -1,6 +1,14 @@
 function Component() {
   return (
-    <div>dashboard</div>
+    <div>
+      dashboard
+      <img
+        onLoad={(event) => {
+          event
+        }}
+      >
+      </img>
+    </div>
   );
 }
 

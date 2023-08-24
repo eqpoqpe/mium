@@ -7,7 +7,7 @@ interface CreateUserPayload {
 
 // uniqueVerification
 interface VerificationPayload {
-  provided_value?: string;
+  unique_key?: string;
 }
 
 export {

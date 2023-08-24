@@ -1,6 +1,15 @@
-import Router from "@koa/router"
+import Router from "@koa/router";
+import { Context } from "koa";
+import { ICacheProvider } from "../infrastructure/cache-provider";
 
-const blobRouter = new Router();
+async function createBlob(ctx: Context & ICacheProvider) {
+  const blob = ctx.cache.get("blob");
+
+  ctx.body = blob;
+}
+
+const blobRouter = new Router()
+  .post("/create_blob", createBlob)
 
 export {
   blobRouter

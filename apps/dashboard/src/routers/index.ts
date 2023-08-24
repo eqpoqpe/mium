@@ -9,11 +9,12 @@ const routes: RouteObject[] = [
     lazy: () => import("../pages/index"),
     children: [
       {
-        path: "dashboard",
+        path: "dashboard/:slug",
         lazy: () => import("../pages/dashboard")
       },
       {
-        path: "auth"
+        path: "auth",
+        lazy: () => import("../pages/auth")
       }
     ],
   },
