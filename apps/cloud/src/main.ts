@@ -1,7 +1,7 @@
 // Copyright (c) 2023 Ryan Martin
 // This code is licensed under MPL-2.0 license.
 
-import { Logo } from "@mium/provider";
+import { Logo } from "@mium/previous";
 import App from "./app";
 import config from "./config";
 

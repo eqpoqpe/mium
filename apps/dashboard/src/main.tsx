@@ -4,7 +4,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./global.css";
-import { Logo } from "@mium/provider";
+import { Logo } from "@mium/previous";
 
 console.log(`
 ${Logo.logoTitle()}

@@ -6,8 +6,11 @@ class Logo {
   ██╔████╔██║██║██║   ██║██╔████╔██║
   ██║╚██╔╝██║██║██║   ██║██║╚██╔╝██║
   ██║ ╚═╝ ██║██║╚██████╔╝██║ ╚═╝ ██║
-  ╚═╝     ╚═╝╚═╝ ╚═════╝ ╚═╝     ╚═╝                
-    `;
+  ╚═╝     ╚═╝╚═╝ ╚═════╝ ╚═╝     ╚═╝
+  
+    Repository: https://github.com/eqpoqpe/mium
+  Found issues: https://github.com/eqpoqpe/mium/issues
+`;
   }
 }
 
