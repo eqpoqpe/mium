@@ -16,7 +16,7 @@
     "prisma:push": "prisma db push",
     "prisma:db:seed": "prisma db seed",
     "prisma:studio": "prisma studio",
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
