@@ -9,6 +9,7 @@ import { makeTracingLayer } from "./layer";
 import Router from "@koa/router";
 import { ApplicationConfig } from "./types";
 import { cacheProvider } from "./infrastructure/cache-provider";
+import { channelSubscribe } from "./infrastructure/channel-subscribe";
 
 function App(config: ApplicationConfig) {
   const app = new Koa({ proxy: true });
@@ -19,6 +20,7 @@ function App(config: ApplicationConfig) {
   app.use(cors());
   app.use(cursorHeader());
   app.use(cacheProvider(config.cache));
+  app.use(channelSubscribe());
   app.use(makeTracingLayer(router));
 
   return app;

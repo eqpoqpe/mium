@@ -3,6 +3,8 @@
 
 import { ApplicationConfig } from "./types";
 
+function hasProviderCode(config: ApplicationConfig) { }
+
 const config: ApplicationConfig = {
   prefix: "/api",
   port: 3000,
@@ -14,3 +16,6 @@ const config: ApplicationConfig = {
 };
 
 export default config;
+export {
+  hasProviderCode
+};

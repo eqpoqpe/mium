@@ -4,6 +4,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./global.css";
+import { Logo } from "@mium/provider";
+
+console.log(`
+${Logo.logoTitle()}
+
+    Repository: https://github.com/eqpoqpe/mium
+  Found issues: https://github.com/eqpoqpe/mium/issues
+
+`);
 
 async function main() {
   const { default: App } = await import("./App.tsx");

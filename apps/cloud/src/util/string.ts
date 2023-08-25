@@ -6,6 +6,11 @@ function isValidEmail(email?: string) {
   return (typeof email !== "undefined" && emailRegex.test(removeSpaces(email)));
 }
 
+function isValidProviderCode(str?: string) {
+  return (typeof str !== "undefined" && str.length > 8);
+}
+
 export {
-  isValidEmail
+  isValidEmail,
+  isValidProviderCode
 };

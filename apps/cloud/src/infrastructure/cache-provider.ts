@@ -1,3 +1,6 @@
+// Copyright (c) 2023 Ryan Martin
+// This code is licensed under MPL-2.0 license.
+
 import { Context, Next } from "koa";
 import NodeCache, { type Options } from "node-cache";
 
@@ -11,7 +14,7 @@ function cacheProvider(options?: Options) {
   return async function (ctx: Context, next: Next) {
     ctx.cache = cacheProvider;
 
-    await next();
+    return await next();
   };
 }
 

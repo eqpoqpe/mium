@@ -19,6 +19,10 @@ const routes: RouteObject[] = [
     ],
   },
   {
+    path: "initial_setup",
+    lazy: () => import("../pages/setup")
+  },
+  {
     path: "404",
     lazy: () => import("../pages/NotFound"),
   },

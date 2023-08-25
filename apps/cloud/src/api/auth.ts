@@ -1,7 +1,7 @@
 import Router from "@koa/router";
 import { type Context } from "koa";
 import { VerificationPayload } from "@mium/types";
-import { isValidEmail } from "../util";
+import { isValidEmail, isValidProviderCode } from "../util";
 import { isAlphaNumeric } from "@mium/utils";
 
 interface ILoginPayload extends VerificationPayload { }
@@ -10,6 +10,7 @@ async function createAccessToken() {
 }
 
 async function uniqueVerification(ctx: Context) {
+  ctx.publish();
 
   // provider code or email
   const { unique_key } = (ctx.request.body as ILoginPayload);
@@ -18,7 +19,7 @@ async function uniqueVerification(ctx: Context) {
 
     // email verification
     ctx.body = "email";
-  } else if (isAlphaNumeric(unique_key)) {
+  } else if (isAlphaNumeric(unique_key) && isValidProviderCode(unique_key)) {
 
     // provider code verification
     ctx.body = "provider code"

@@ -1,4 +1,4 @@
-# @mium/specs
+# @mium/spec
 
 ## Public Export Server
 

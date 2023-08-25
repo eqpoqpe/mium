@@ -1,13 +1,12 @@
 // Copyright (c) 2023 Ryan Martin
 // This code is licensed under MPL-2.0 license.
 
-import { CreateUserPayloadErrors } from "@mium/types";
 import { type Options as NodeCacheOPtions } from "node-cache";
 
 type AccessCode = "limit" | "block" | "full";
 
 interface ResquestDetailedError {
-  code: AccessCode | CreateUserPayloadErrors;
+  code: AccessCode;
   msg?: string;
 }
 
@@ -19,7 +18,7 @@ interface _ServerResult<T> {
 }
 
 interface ServerResult<T> {
-  error: AccessCode | CreateUserPayloadErrors;
+  error: AccessCode;
   data?: T;
 }
 

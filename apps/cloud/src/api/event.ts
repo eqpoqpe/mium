@@ -1,6 +1,6 @@
 import Router from "@koa/router";
 import { Context } from "koa";
-import { PassThrough } from "stream";
+import { SSEStream } from "../infrastructure/sse-stream";
 
 async function eventSubscribe(ctx: Context) {
   ctx.request.socket.setTimeout(0);
@@ -13,17 +13,21 @@ async function eventSubscribe(ctx: Context) {
     "Connection": "keep-alive",
   });
 
-  const stream = new PassThrough();
+  const stream = new SSEStream();
 
   ctx.status = 200;
   ctx.body = stream;
+  const date = Date.now();
 
-  setInterval(() => {
+  const listener = () => {
     stream.write(`data: ${JSON.stringify({ _update: Date.now() })}\n\n`);
-  }, 1300);
+    console.log(date);
+  };
 
-  ctx.res.on("close", () => {
-    console.log("closed");
+  ctx.subscribe?.(listener);
+
+  stream.on("close", () => {
+    ctx.unsubscribe?.(listener);
   });
 }
 
