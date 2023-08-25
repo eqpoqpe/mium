@@ -2,6 +2,7 @@
   "name": "@mium/previous",
   "version": "0.1.0",
   "description": "",
+  "type": "module",
   "main": "src/index.ts",
   "devDependencies": {},
   "scripts": {

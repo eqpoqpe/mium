@@ -4,5 +4,6 @@
 export default {
   jwt: "__TOKEN",
   api_host: "api_host",
-  lang: "__LANG"
+  lang: "__LANG",
+  invitation_code: "invitation_code"
 };

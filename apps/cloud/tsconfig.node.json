@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "composite": true,
+        "target": "ESNext",
+        "module": "ESNext",
+        "resolveJsonModule": true,
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true,
+        "outDir": "dist",
+        "rootDir": "."
+    },
+    "include": [
+        "package.json"
+    ]
+}

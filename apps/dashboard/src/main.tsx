@@ -6,13 +6,7 @@ import ReactDOM from "react-dom/client";
 import "./global.css";
 import { Logo } from "@mium/previous";
 
-console.log(`
-${Logo.logoTitle()}
-
-    Repository: https://github.com/eqpoqpe/mium
-  Found issues: https://github.com/eqpoqpe/mium/issues
-
-`);
+console.log(Logo.logoTitle());
 
 async function main() {
   const { default: App } = await import("./App.tsx");
