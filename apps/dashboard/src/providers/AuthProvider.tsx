@@ -15,6 +15,8 @@ const authContext = createContext<AuthContext | undefined>(undefined);
 
 function AuthProvider(props: AuthProviderProps & PropsWithChildren) {
   const { children, initialFn } = props;
+
+  // @ts-ignore
   const [authToken, setAuthToken] = useState(initialFn ?? "");
 
   return (

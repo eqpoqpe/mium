@@ -1,5 +1,7 @@
+import { Outlet } from "react-router-dom";
+
 function AllReadyAtuh() {
-  return <div></div>;
+  return (<Outlet />);
 }
 
 export default AllReadyAtuh;

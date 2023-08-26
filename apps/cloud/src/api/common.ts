@@ -1,6 +1,8 @@
-import Router from "@koa/router";
+import Router, { RouterContext } from "@koa/router";
 
-async function healthz() {
+async function healthz(ctx: RouterContext) {
+  ctx.status = 200;
+  ctx.body = "healthz ok";
 }
 
 const commonRouter = new Router()

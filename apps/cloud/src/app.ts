@@ -15,12 +15,12 @@ function App(config: ApplicationConfig) {
   const app = new Koa({ proxy: true });
   const router = new Router({ prefix: config?.prefix });
 
+  cacheProvider(app, config.cache);
+  channelSubscribe(app);
   app.use(applicationException());
   app.use(bodyParser());
   app.use(cors());
   app.use(cursorHeader());
-  app.use(cacheProvider(config.cache));
-  app.use(channelSubscribe());
   app.use(makeTracingLayer(router));
 
   return app;

@@ -1,32 +1,39 @@
 // Copyright (c) 2023 Ryan Martin
 // This code is licensed under MPL-2.0 license.
 
-import { Context, Next } from "koa";
+import Application, { Context, Next } from "koa";
 import { EventEmitter } from "events";
 
 type SubscribeCallback = () => void;
+interface IChannel {
+  subscribe(listener: SubscribeCallback): void;
+  unsubscribe(listener: SubscribeCallback): void;
+  publish(): void;
+}
+interface ISubscribe {
+  channel: IChannel;
+}
 
-function channelSubscribe() {
-  const subscribers: SubscribeCallback[] = [];
+function channelSubscribe(app: Application) {
+  // const subscribers: SubscribeCallback[] = [];
   const publish = new EventEmitter();
-
-  return async function (ctx: Context, next: Next) {
-    ctx.subscribe = (listener: SubscribeCallback) => {
+  const _usekey = "channel";
+  const channel: IChannel = {
+    subscribe(listener: SubscribeCallback) {
       publish.on("publish", listener);
-    };
-
-    ctx.unsubscribe = (listener: SubscribeCallback) => {
+    },
+    unsubscribe(listener: SubscribeCallback) {
       publish.off("publish", listener);
-    };
-
-    ctx.publish = () => {
+    },
+    publish() {
       publish.emit("publish");
-    };
+    }
+  };
 
-    return await next();
-  }
+  app.context[_usekey] = channel;
 }
 
 export {
-  channelSubscribe
+  channelSubscribe,
+  type ISubscribe
 };

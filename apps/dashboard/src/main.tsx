@@ -4,11 +4,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./global.css";
-import { Logo } from "@mium/previous";
-
-console.log(Logo.logoTitle());
 
 async function main() {
+  (await import("@mium/previous")).Logo.logoTitle();
   const { default: App } = await import("./App.tsx");
 
   ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -18,4 +16,4 @@ async function main() {
   );
 }
 
-await main();
+main();

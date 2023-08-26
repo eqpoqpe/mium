@@ -1,17 +1,14 @@
-import Router from "@koa/router";
-import { type Context } from "koa";
+import Router, { RouterContext } from "@koa/router";
 import { VerificationPayload } from "@mium/types";
 import { isValidEmail, isValidProviderCode } from "../util";
 import { isAlphaNumeric } from "@mium/utils";
+import { ISubscribe } from "../infrastructure/channel-subscribe";
+import { ICacheProvider } from "../infrastructure/cache-provider";
 
 interface ILoginPayload extends VerificationPayload { }
 
-async function createAccessToken() {
-}
-
-async function uniqueVerification(ctx: Context) {
-  ctx.publish();
-
+async function verification(ctx: RouterContext<{}, ICacheProvider>) {
+  
   // provider code or email
   const { unique_key } = (ctx.request.body as ILoginPayload);
 
@@ -29,8 +26,10 @@ async function uniqueVerification(ctx: Context) {
 }
 
 const authRotuer = new Router()
-  .post("/verification", uniqueVerification)
-  .post("/create_access_token", createAccessToken);
+  .post<{}, ISubscribe & ICacheProvider>("/verification", verification)
+  .post("/create_access_token", async (ctx) => {
+    ctx.body = "jwt";
+  })
 
 export {
   authRotuer
