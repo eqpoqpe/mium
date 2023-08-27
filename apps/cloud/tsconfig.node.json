@@ -1,15 +1,18 @@
 {
+    "extends": "../../tsconfig.json",
     "compilerOptions": {
         "composite": true,
         "target": "ESNext",
         "module": "ESNext",
         "resolveJsonModule": true,
-        "moduleResolution": "Node",
+        "moduleResolution": "NodeNext",
         "allowSyntheticDefaultImports": true,
         "outDir": "dist",
         "rootDir": "."
     },
+    "references": [],
     "include": [
+        "scripts",
         "package.json"
     ]
 }

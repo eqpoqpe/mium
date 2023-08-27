@@ -20,13 +20,6 @@ body {
   height: inherit;
   position: fixed;
   top: 0;
-  color: var(--main-text-color);
-}
-
-.dark {
-  --main-text-color: white;
-}
-
-.light {
-  --main-text-color: black;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
