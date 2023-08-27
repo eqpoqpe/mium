@@ -10,6 +10,7 @@ import Router from "@koa/router";
 import { ApplicationConfig } from "./types";
 import { cacheProvider } from "./infrastructure/cache-provider";
 import { channelSubscribe } from "./infrastructure/channel-subscribe";
+import { configProvider } from "./infrastructure/config-provider";
 
 function App(config: ApplicationConfig) {
   const app = new Koa({ proxy: true });
@@ -17,6 +18,7 @@ function App(config: ApplicationConfig) {
 
   cacheProvider(app, config.cache);
   channelSubscribe(app);
+  configProvider(app, config);
   app.use(applicationException());
   app.use(bodyParser());
   app.use(cors());

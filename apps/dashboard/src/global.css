@@ -11,9 +11,22 @@ body {
   height: 100%;
 }
 
+* {
+  margin: 0;
+}
+
 #root {
   width: inherit;
   height: inherit;
   position: fixed;
   top: 0;
+  color: var(--main-text-color);
+}
+
+.dark {
+  --main-text-color: white;
+}
+
+.light {
+  --main-text-color: black;
 }

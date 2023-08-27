@@ -10,6 +10,7 @@ interface ResquestDetailedError {
   msg?: string;
 }
 
+// @ts-ignore
 // new defined types for next version
 interface _ServerResult<T> {
   error: ResquestDetailedError;

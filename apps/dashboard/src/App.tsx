@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router-dom";
 import router from "./routers";
 import { AuthProvider } from "./providers/AuthProvider";
 import tokenWord from "./token-word";
+import { AppearanceProvider } from "./providers/AppearanceProvider";
 
 function initialAuthToken() {
   return localStorage.getItem(tokenWord.jwt) ?? "";
@@ -12,9 +13,11 @@ function initialAuthToken() {
 
 function App() {
   return (
-    <AuthProvider initialFn={initialAuthToken}>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <AppearanceProvider>
+      <AuthProvider initialFn={initialAuthToken}>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </AppearanceProvider>
   );
 }
 

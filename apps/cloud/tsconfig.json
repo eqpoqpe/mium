@@ -12,7 +12,12 @@
     "outDir": "dist",
     "noEmit": false,
     "verbatimModuleSyntax": false,
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "removeComments": false
   },
   "include": [
     "src",

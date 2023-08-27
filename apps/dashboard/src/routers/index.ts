@@ -19,6 +19,13 @@ const routes: RouteObject[] = [
     ],
   },
   {
+    path: "home",
+    lazy: () => import("../pages/home")
+  },
+  // {
+  //   path: "about",
+  // },
+  {
     path: "initial_setup",
     lazy: () => import("../pages/setup")
   },

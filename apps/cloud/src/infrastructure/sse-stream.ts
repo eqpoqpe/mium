@@ -3,7 +3,7 @@
 
 import { Transform } from "stream";
 
-type TransformCallback = (error?: Error | null, data?: any) => void;
+type TransformCallback = <T = {}>(error?: Error | null, data?: T) => void;
 
 class SSEStream extends Transform {
   constructor() {
@@ -12,7 +12,8 @@ class SSEStream extends Transform {
     });
   }
 
-  _transform(data: string, encoding: BufferEncoding, callback: TransformCallback) {
+
+  _transform(data: string, _encoding: BufferEncoding, callback: TransformCallback) {
     this.push(`data: ${JSON.stringify(data)}\n\n`);
     callback();
   }

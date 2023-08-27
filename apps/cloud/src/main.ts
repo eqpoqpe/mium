@@ -3,14 +3,17 @@
 
 import { Logo } from "@mium/previous";
 import App from "./app";
-import config from "./config";
+import config, { hasProviderCode } from "./config";
 
+const providerCode = hasProviderCode(config);
+
+// @ts-ignore
 const server = App(config).listen(config.port ?? 3000, "0.0.0.0", 0, () => {
   console.log(`
-  🚀 Server ready at: http://localhost:${config.port ?? 3000}
-  
   ${Logo.logoTitle()}
 
-  ${"Provider Server: On"}
+  🚀 Server ready at: http://localhost:${config.port ?? 3000}
+
+  ${"Provider Server: " + (providerCode ? "On" : "Off")}
 `);
 });

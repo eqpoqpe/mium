@@ -1,14 +1,40 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/mium.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mium - Noting for you.</title>
-  </head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/mium.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mium - Noting for you.</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <script>
+
+    // prefers theme
+    (() => {
+      const _key = "__APPEARANCE_THEME"; /* dark, light, auto */
+      const appearanceTheme = localStorage.getItem(_key);
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (appearanceTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else if (appearanceTheme === "light") {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.add("light");
+      } else if (appearanceTheme === "auto" || appearanceTheme === null) {
+        if (isDark) {
+          document.documentElement.classList.remove("light");
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+          document.documentElement.classList.add("light");
+        }
+      }
+    })();
+  </script>
+</body>
+
 </html>

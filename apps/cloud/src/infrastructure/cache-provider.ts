@@ -1,7 +1,7 @@
 // Copyright (c) 2023 Ryan Martin
 // This code is licensed under MPL-2.0 license.
 
-import Application, { Context, Next } from "koa";
+import type Application from "koa";
 import NodeCache, { type Options } from "node-cache";
 
 interface ICacheProvider {

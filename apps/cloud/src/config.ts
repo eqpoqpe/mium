@@ -3,11 +3,14 @@
 
 import { ApplicationConfig } from "./types";
 
-function hasProviderCode(config: ApplicationConfig) { }
+function hasProviderCode(config: ApplicationConfig) {
+  return !!config.privoder;
+}
 
 const config: ApplicationConfig = {
   prefix: "/api",
   port: 3000,
+  privoder: true,
   cache: {
 
     // 7 day

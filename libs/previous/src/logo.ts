@@ -16,4 +16,4 @@ class Logo {
 
 export {
   Logo
-}
+};

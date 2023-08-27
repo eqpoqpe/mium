@@ -1,3 +1,6 @@
+// Copyright (c) 2023 Ryan Martin
+// This code is licensed under MPL-2.0 license.
+
 import Router from "@koa/router";
 import { SSEStream } from "../infrastructure/sse-stream";
 import { ISubscribe } from "../infrastructure/channel-subscribe";

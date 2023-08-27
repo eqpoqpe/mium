@@ -1,3 +1,6 @@
+// Copyright (c) 2023 Ryan Martin
+// This code is licensed under MPL-2.0 license.
+
 // const image = new Image();
 // image.crossOrigin = "Anonymous";
 // var canvas = document.createElement("canvas");

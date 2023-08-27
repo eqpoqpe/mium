@@ -3,8 +3,8 @@
 
 import { Context, Next } from "koa";
 
-function slow(delay: number, matches?: string[]) {
-  return async function (ctx: Context, next: Next) {
+function slow(delay: number, _matches?: string[]) {
+  return async function (_ctx: Context, next: Next) {
     await new Promise(resolve => setTimeout(resolve, delay));
     await next();
   }
