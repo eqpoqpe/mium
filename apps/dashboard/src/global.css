@@ -20,6 +20,5 @@ body {
   height: inherit;
   position: fixed;
   top: 0;
-  overflow-y: auto;
   overflow-x: hidden;
 }
