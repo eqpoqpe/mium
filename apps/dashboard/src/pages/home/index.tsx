@@ -37,6 +37,7 @@ function Component() {
         "items-center",
         "overflow-x-hidden",
         "overflow-y-auto",
+        "pt-10",
         "pb-6",
         "dark:bg-neutral-900",
         "child:shrink-0"
@@ -45,7 +46,6 @@ function Component() {
       <div
         className={classNameConcat([
           "w-fit",
-          "mt-[90px]",
           "mb-3",
           "flex",
           "flex-col",
