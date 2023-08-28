@@ -5,6 +5,7 @@ import { classNameConcat } from "@eqpoqpe/classname-utils";
 import EmojilineSvg from "../../assets/emojiline.svg";
 import { FigmaLogoIcon, GitHubLogoIcon, RocketIcon } from "@radix-ui/react-icons";
 import { useAppearanceContext } from "../../providers/AppearanceProvider";
+import MiumLogo from "../../components/icon/MiumLogo";
 
 const pageContentClassName = classNameConcat([
   "text-neutral-800",
@@ -57,10 +58,25 @@ function Component() {
           "h-[93px]",
           "bg-no-repeat",
           "bg-contain",
-          "bg-center"
+          "bg-center",
+          "relative"
         ])}
         style={{ backgroundImage: `url(${EmojilineSvg})` }}
       >
+        <MiumLogo
+          className={classNameConcat([
+            "w-[56px]",
+            "h-[56px]",
+            "bg-no-repeat",
+            "bg-contain",
+            "bg-center",
+            "absolute",
+            "top-[50%]",
+            "left-[50%]",
+            "translate-x-[-50%]",
+            "translate-y-[-50%]"
+          ])}
+        />
       </div>
       <div
         className={classNameConcat(["h-fit", "pt-10"])}
