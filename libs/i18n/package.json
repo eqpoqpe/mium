@@ -2,9 +2,20 @@
   "name": "@mium/i18n",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "publishConfig": {
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+      ".": "./dist/index.js"
+    }
+  },
   "devDependencies": {},
   "scripts": {
+    "build": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

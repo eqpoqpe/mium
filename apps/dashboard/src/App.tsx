@@ -1,6 +1,3 @@
-// Copyright (c) 2023 Ryan Martin
-// This code is licensed under MPL-2.0 license.
-
 import { RouterProvider } from "react-router-dom";
 import router from "./routers";
 import { AuthProvider } from "./providers/AuthProvider";

@@ -1,0 +1,18 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "noEmit": false,
+        "composite": true,
+        "module": "NodeNext",
+        "resolveJsonModule": true,
+        "moduleResolution": "nodenext",
+        "outDir": "lib/resources"
+    },
+    "include": [
+        "./src/resources/**/*.ts",
+        "./src/resources/**/*.json"
+    ],
+    "exclude": [
+        "dist"
+    ]
+}

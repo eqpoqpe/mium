@@ -1,18 +1,46 @@
 {
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "incremental": true
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
     "compilerOptions": {
-      "composite": true,
-      "noEmit": false,
-      "strict": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "noFallthroughCasesInSwitch": true
-    },
-    "ts-node": {
-      "esm": true,
-      "experimentalSpecifierResolution": "node",
-      "compilerOptions": {
-        "module": "ESNext",
-        "moduleResolution": "Node"
-      }
+      "module": "ESNext",
+      "moduleResolution": "Node"
     }
-  }
+  },
+  "references": [
+    {
+      "path": "./apps/cloud"
+    },
+    {
+      "path": "./apps/dashboard"
+    },
+    {
+      "path": "./libs/i18n"
+    },
+    {
+      "path": "./libs/previous"
+    },
+    {
+      "path": "./libs/resolve"
+    },
+    {
+      "path": "./libs/rest"
+    },
+    {
+      "path": "./libs/spec"
+    },
+    {
+      "path": "./libs/types"
+    }
+  ]
+}
