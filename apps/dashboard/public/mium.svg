@@ -1,19 +1,5 @@
-<svg width="108" height="110" viewBox="0 0 108 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_211_8)">
-<rect x="4" y="4" width="100" height="100" rx="21" fill="white"/>
-</g>
-<path d="M16.6367 42H21.0313L28.6719 60.6562H28.9531L36.5938 42H40.9883V66H37.543V48.6328H37.3203L30.2422 65.9648H27.3828L20.3047 48.6211H20.082V66H16.6367V42Z" fill="black"/>
-<path d="M93.7778 54.7778C94.2074 54.3482 94.2074 53.6518 93.7778 53.2222L86.7775 46.2218C86.3479 45.7922 85.6514 45.7922 85.2218 46.2218C84.7922 46.6514 84.7922 47.3479 85.2218 47.7775L91.4444 54L85.2218 60.2225C84.7922 60.6521 84.7922 61.3486 85.2218 61.7782C85.6514 62.2078 86.3479 62.2078 86.7775 61.7782L93.7778 54.7778ZM51 55.1H93V52.9H51V55.1Z" fill="black"/>
-<defs>
-<filter id="filter0_d_211_8" x="0" y="1.7" width="108" height="108" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="1.7"/>
-<feGaussianBlur stdDeviation="2"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_211_8"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_211_8" result="shape"/>
-</filter>
-</defs>
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" y="2" width="96" height="96" rx="19" fill="white" stroke="black" stroke-width="4"/>
+<path d="M15.6367 38H20.0313L27.6719 56.6562H27.9531L35.5938 38H39.9883V62H36.543V44.6328H36.3203L29.2422 61.9648H26.3828L19.3047 44.6211H19.082V62H15.6367V38Z" fill="black"/>
+<path d="M87.8839 50.8839C88.372 50.3957 88.372 49.6043 87.8839 49.1161L79.9289 41.1612C79.4408 40.673 78.6493 40.673 78.1612 41.1612C77.673 41.6493 77.673 42.4408 78.1612 42.9289L85.2322 50L78.1612 57.0711C77.673 57.5592 77.673 58.3507 78.1612 58.8388C78.6493 59.327 79.4408 59.327 79.9289 58.8388L87.8839 50.8839ZM48 51.25L87 51.25V48.75L48 48.75V51.25Z" fill="black"/>
 </svg>

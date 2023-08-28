@@ -65,8 +65,8 @@ function Component() {
       >
         <MiumLogo
           className={classNameConcat([
-            "w-[56px]",
-            "h-[56px]",
+            "w-[63px]",
+            "h-[63px]",
             "bg-no-repeat",
             "bg-contain",
             "bg-center",
