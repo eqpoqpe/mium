@@ -3,24 +3,14 @@
 
 import { classNameConcat } from "@eqpoqpe/classname-utils";
 import EmojilineSvg from "../../assets/emojiline.svg";
-import { FigmaLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
+import { FigmaLogoIcon, GitHubLogoIcon, RocketIcon } from "@radix-ui/react-icons";
 import { useAppearanceContext } from "../../providers/AppearanceProvider";
 
-const h1ClassName = classNameConcat([
+const pageContentClassName = classNameConcat([
   "text-neutral-800",
-  "text-6xl",
   "font-bold",
   "text-center",
   "my-3",
-  "dark:text-white"
-]);
-const h2ClassName = classNameConcat([
-  "text-neutral-800",
-  "text-2xl",
-  "font-bold",
-  "text-center",
-  "my-3",
-  "max-w-[472px]",
   "dark:text-white"
 ]);
 
@@ -54,10 +44,10 @@ function Component() {
           "px-3"
         ])}
       >
-        <h1 className={classNameConcat([h1ClassName])}>
+        <h1 className={classNameConcat([pageContentClassName, "text-6xl"])}>
           Ideals, Topics, Explores.
         </h1>
-        <h2 className={classNameConcat([h2ClassName])}>
+        <h2 className={classNameConcat([pageContentClassName, "text-2xl", "max-w-[472px]"])}>
           Streamline team collaboration with real-time communication and file sharing.
         </h2>
       </div>
@@ -92,8 +82,24 @@ function Component() {
         >
           Get Started
         </button>
-        <p className={classNameConcat(["text-center", "opacity-50", "text-sm", "mt-2"])}>
-          <span className={classNameConcat(["border-dotted", "border-b-2", "border-stone-300"])}>coming soon</span>
+        <p
+          className={classNameConcat([
+            "text-center",
+            "opacity-50",
+            "text-sm",
+            "mt-3",
+            "dark:text-stone-400",
+            "text-stone-900",
+            "flex",
+            "flex-row",
+            "items-center",
+            "child:mx-1"
+          ])}
+        >
+          <RocketIcon width={20} height={20} />
+          <span className={classNameConcat(["border-dotted", "border-b-2", "border-stone-300"])}>
+            coming soon
+          </span>
         </p>
       </div>
       <div
@@ -101,7 +107,7 @@ function Component() {
           "flex",
           "flex-row",
           "justify-center",
-          "mt-[130px]",
+          "mt-[230px]",
           "child:mx-2"
         ])}
       >
