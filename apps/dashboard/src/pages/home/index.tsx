@@ -5,6 +5,7 @@ import { classNameConcat } from "@eqpoqpe/classname-utils";
 import EmojilineSvg from "../../assets/emojiline.svg";
 import { FigmaLogoIcon, GitHubLogoIcon, RocketIcon } from "@radix-ui/react-icons";
 import MiumLogo from "../../components/icon/MiumLogo";
+import ProductPng from "../../assets/product.png";
 
 const pageContentClassName = classNameConcat([
   "text-neutral-800",
@@ -109,6 +110,18 @@ function Component() {
             coming soon
           </span>
         </p>
+      </div>
+      <div>
+        <div
+          className={classNameConcat([
+            "w-[732px]",
+            "h-[503px]",
+            "bg-no-repeat",
+            "bg-contain",
+            "bg-center",
+          ])}
+          style={{ backgroundImage: `url(${ProductPng})` }}
+        ></div>
       </div>
       <div
         className={classNameConcat([
