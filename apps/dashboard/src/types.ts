@@ -1,3 +1,6 @@
-type ComponentProps = { className?: string };
+type ComponentProps = {
+  className?: string;
+  theme?: string;
+};
 
 export { type ComponentProps };

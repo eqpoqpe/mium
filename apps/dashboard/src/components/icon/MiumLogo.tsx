@@ -1,9 +1,7 @@
-import { useAppearanceContext } from "../../providers/AppearanceProvider";
 import { ComponentProps } from "../../types";
 
 function MiumLogo(props: ComponentProps) {
-  const { className } = props;
-  const { theme } = useAppearanceContext();
+  const { className, theme } = props;
 
   return (
     <svg className={className} width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,8 +24,8 @@ function MiumLogo(props: ComponentProps) {
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
           </filter>
         ) : (
-          <filter id="filter0_d_0_1" x="0" y="0" width="108" height="108" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <filter id="filter0_d_0_1" x="0" y="0" width="108" height="108" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
             <feOffset dy="2" />
             <feGaussianBlur stdDeviation="2" />

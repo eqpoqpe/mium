@@ -4,20 +4,16 @@
 import { classNameConcat } from "@eqpoqpe/classname-utils";
 import EmojilineSvg from "../../assets/emojiline.svg";
 import { FigmaLogoIcon, GitHubLogoIcon, RocketIcon } from "@radix-ui/react-icons";
-import { useAppearanceContext } from "../../providers/AppearanceProvider";
 import MiumLogo from "../../components/icon/MiumLogo";
 
 const pageContentClassName = classNameConcat([
   "text-neutral-800",
   "font-bold",
   "text-center",
-  "my-3",
-  "dark:text-white"
+  "my-3"
 ]);
 
 function Component() {
-  const { theme } = useAppearanceContext();
-
   return (
     <div
       className={classNameConcat([
@@ -30,7 +26,6 @@ function Component() {
         "overflow-y-auto",
         "pt-10",
         "pb-6",
-        "dark:bg-neutral-900",
         "child:shrink-0"
       ])}
     >
@@ -83,14 +78,12 @@ function Component() {
       >
         <button
           className={classNameConcat([
-            "dark:bg-neutral-700",
             "bg-neutral-200",
             "box-border",
             "px-3",
             "py-1",
             "rounded-md",
             "text-lg",
-            "dark:text-stone-500",
             "text-stone-100",
             "font-medium"
           ])}
@@ -104,7 +97,6 @@ function Component() {
             "opacity-50",
             "text-sm",
             "mt-3",
-            "dark:text-stone-400",
             "text-stone-900",
             "flex",
             "flex-row",
@@ -128,9 +120,9 @@ function Component() {
         ])}
       >
         <a href="https://github.com/eqpoqpe/mium">
-          <GitHubLogoIcon color={theme === "dark" ? "white" : "black"} width={22} height={22} />
+          <GitHubLogoIcon color="black" width={22} height={22} />
         </a>
-        <FigmaLogoIcon color={theme === "dark" ? "white" : "black"} width={22} height={22} />
+        <FigmaLogoIcon color="black" width={22} height={22} />
       </div>
     </div>
   );
