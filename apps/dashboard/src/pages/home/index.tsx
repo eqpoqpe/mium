@@ -115,7 +115,7 @@ function Component() {
         <div
           className={classNameConcat([
             "w-[732px]",
-            "h-[503px]",
+            "h-[443px]",
             "bg-no-repeat",
             "bg-contain",
             "bg-center",
@@ -128,7 +128,7 @@ function Component() {
           "flex",
           "flex-row",
           "justify-center",
-          "mt-[230px]",
+          "mt-[174px]",
           "child:mx-2"
         ])}
       >
