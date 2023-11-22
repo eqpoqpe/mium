@@ -1,3 +1,5 @@
+> <em>Redesigned by Ryan Martin in <a href="https://github.com/mutium">Mutium</a></em>
+
 <p align="center">Streamline team collaboration with real-time communication and file sharing.</p>
 
 <p align="center">
